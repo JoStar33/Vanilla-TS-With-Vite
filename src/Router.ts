@@ -1,5 +1,5 @@
-import MainPage from './pages';
-import TestPage from './pages/TestPage';
+import MainPage from '@/pages';
+import TestPage from '@/pages/TestPage';
 
 const routes = {
   '/': MainPage(),
@@ -8,7 +8,6 @@ const routes = {
 
 const appDiv = document.querySelector('#app')!;
 const renderHTML = (pathName: keyof typeof routes) => {
-  // if (!appDiv) return;
   appDiv.replaceChildren(routes[pathName]);
 };
 
