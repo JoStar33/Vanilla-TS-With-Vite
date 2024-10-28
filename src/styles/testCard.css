@@ -1,0 +1,16 @@
+.test-card {
+  width: 33%;
+  border-radius: 20px;
+  border: 1px solid black;
+  aspect-ratio: 1;
+}
+
+.test-card__content {
+  width: 100%;
+  height: fit-content;
+}
+
+.test-card__title {
+  font-size: 14px;
+  font-weight: 600;
+}

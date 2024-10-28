@@ -1,3 +1,4 @@
+import { TestCard } from '@/components/TestCard';
 import { onNavigate, routes } from '@/Router';
 
 interface SideBarElement {
@@ -10,8 +11,11 @@ const sideBarMenu: SideBarElement[] = [
   { title: '메인페이지2', path: '/' },
 ];
 
+const cardData = ['제목', '제목임', '테스트 제목'];
+
 export default function TestPage() {
   const testBody = document.createElement('div');
+  testBody.className = 'test-page';
   const testSideBar = document.createElement('div');
   testSideBar.className = 'test-page__side-bar';
 
@@ -29,7 +33,7 @@ export default function TestPage() {
 
   const testMain = document.createElement('div');
   testMain.className = 'test-page__main';
-
+  cardData.forEach((cardElement) => testMain.append(TestCard({ title: cardElement })));
   testBody.append(testSideBar);
   testBody.append(testMain);
   return testBody;
