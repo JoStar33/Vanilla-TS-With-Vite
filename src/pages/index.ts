@@ -1,5 +1,5 @@
 import { onNavigate } from '../Router';
-import '../styles/main.css';
+import '@/styles/main.css';
 
 export default function MainPage() {
   const pageBody = document.createElement('div');

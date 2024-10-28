@@ -1,7 +1,8 @@
 import MainPage from '@/pages';
 import TestPage from '@/pages/TestPage';
+import '@/styles/testPage.css';
 
-const routes = {
+export const routes = {
   '/': MainPage(),
   '/test': TestPage(),
 };
@@ -17,7 +18,14 @@ export const onNavigate = (pathName: keyof typeof routes) => {
 };
 
 window.onpopstate = () => {
-  if (!appDiv) return;
+  const pathName = window.location.pathname;
+  if (routes.hasOwnProperty(pathName)) {
+    appDiv.replaceChildren(routes[pathName as keyof typeof routes]);
+    return;
+  }
+};
+
+window.onload = () => {
   const pathName = window.location.pathname;
   if (routes.hasOwnProperty(pathName)) {
     appDiv.replaceChildren(routes[pathName as keyof typeof routes]);
