@@ -9,6 +9,7 @@ interface SideBarElement {
 const sideBarMenu: SideBarElement[] = [
   { title: '메인페이지', path: '/' },
   { title: '메인페이지2', path: '/' },
+  { title: '조건부 렌더링 연습', path: '/conditional' },
 ];
 
 const cardData = ['제목', '제목임', '테스트 제목'];

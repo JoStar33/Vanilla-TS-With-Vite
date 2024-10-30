@@ -1,10 +1,12 @@
 import MainPage from '@/pages';
 import TestPage from '@/pages/TestPage';
 import '@/styles/testPage.css';
+import ConditionalRenderPage from './pages/ConditionalRenderPage';
 
 export const routes = {
   '/': MainPage(),
   '/test': TestPage(),
+  '/conditional': ConditionalRenderPage(),
 };
 
 const appDiv = document.querySelector('#app')!;
@@ -18,14 +20,6 @@ export const onNavigate = (pathName: keyof typeof routes) => {
 };
 
 window.onpopstate = () => {
-  const pathName = window.location.pathname;
-  if (routes.hasOwnProperty(pathName)) {
-    appDiv.replaceChildren(routes[pathName as keyof typeof routes]);
-    return;
-  }
-};
-
-window.onload = () => {
   const pathName = window.location.pathname;
   if (routes.hasOwnProperty(pathName)) {
     appDiv.replaceChildren(routes[pathName as keyof typeof routes]);
